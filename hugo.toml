@@ -28,6 +28,9 @@ centerTheme = true
 autoCover = true
 showLastUpdated = false
 
+[params.twitter]
+creator = "harshv5094"
+
 # [markup.goldmark.renderer]
 # unsafe = true
 
