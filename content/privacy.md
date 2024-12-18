@@ -14,11 +14,11 @@ I will not use or share your information with anyone outside of the scope descri
 
 The Website does not collect any personal information or use any trackers or cookies. Privacy is important, and I do not engage in any form of tracking or data collection. The Website's source (including this policy) is available at <https://github.com/harshv5094/website>.
 
-## Log Data
-
-Whenever you visit the Website, the information that your browser sends (the Log Data) to it is temporarily being stored by Google Analytics. explicitly for analytic purposes.\
-Please refer to Google's Privacy Policy: [Google Analytics Privacy Policy](https://support.google.com/analytics/answer/6004245?hl=en). This Log Data may include information such as your device’s Internet Protocol (“IP”) address, browser version, the time and date of your visit, the time spent on specific webpages, and other statistics.
-
+<!-- ## Log Data -->
+<!---->
+<!-- Whenever you visit the Website, the information that your browser sends (the Log Data) to it is temporarily being stored by Google Analytics. explicitly for analytic purposes.\ -->
+<!-- Please refer to Google's Privacy Policy: [Google Analytics Privacy Policy](https://support.google.com/analytics/answer/6004245?hl=en). This Log Data may include information such as your device’s Internet Protocol (“IP”) address, browser version, the time and date of your visit, the time spent on specific webpages, and other statistics. -->
+<!---->
 ## Third-Party Links
 
 My Website may contain links to third-party websites. Please note that I am not responsible for the privacy practices of these websites.
