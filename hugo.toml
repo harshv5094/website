@@ -1,0 +1,79 @@
+baseURL = "https://harshv5094.netlify.app/"
+languageCode = "en-us"
+theme = "terminal"
+keywords = [
+  'harsh',
+  'vyapari',
+  'harshv5094',
+  'harsh vyapari',
+  'github',
+  'programming',
+  'development',
+  'programmer',
+  'developer',
+  'harshv5094@gmail.com',
+]
+enableEmoji = true
+enableRobotsTXT = true
+
+[pagination]
+pagerSize = 5
+
+[params]
+contentTypeName = "posts"
+showMenuItems = 2
+showLanguageSelector = false
+fullWidthTheme = false
+centerTheme = true
+autoCover = true
+showLastUpdated = false
+
+[params.twitter]
+creator = "harshv5094"
+
+# [markup.goldmark.renderer]
+# unsafe = true
+
+[security]
+[security.funcs]
+getenv = ["^HUGO_"]
+
+[languages]
+[languages.en]
+languageName = "English"
+title = "Harsh Vyapari"
+
+[languages.en.params]
+subtitle = "Hello, My name is Harsh Vyapari. A.K.A @harshv5094..."
+menuMore = "More"
+readMore = "Read more"
+readOtherPosts = "Read other posts"
+newerPosts = "Newer posts"
+olderPosts = "Older posts"
+missingContentMessage = "Page not found..."
+missingBackButtonLabel = "Back to home page"
+minuteReadingTime = "min read"
+words = "words"
+
+[languages.en.params.logo]
+logoText = "hello world"
+logoHomeLink = "/"
+
+[languages.en.menu]
+[[languages.en.menu.main]]
+identifier = "about"
+name = "About"
+url = "/about"
+weight = 1
+
+[[languages.en.menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts"
+weight = 2
+
+[[languages.en.menu.main]]
+identifier = "privacy"
+name = "Privacy Policy"
+url = "/privacy"
+weight = 3
