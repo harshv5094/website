@@ -18,7 +18,7 @@ I love neovim and use arch btw.
 
 ## Links
 
-[harshv5094@gmail.com](mailto:harshv5094@gmail.com)
+[harshvy5094@proton.me](mailto:harshvy5094@proton.me)
 
 [Resume](files/harsh-vyapari.pdf)
 

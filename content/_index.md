@@ -14,7 +14,7 @@ My name is Harsh Vyapari. A.K.A @harshv5094, @harshvy5094. I do some Computer St
 
 ## Contact
 
-[harshv5094@gmail.com](mailto:harshv5094@gmail.com)
+[harshvy5094@proton.me](mailto:harshvy5094@proton.me)
 
 [Resume](files/harsh-vyapari.pdf)
 
