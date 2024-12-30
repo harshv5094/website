@@ -24,7 +24,7 @@ I love neovim and use arch btw.
 
 [GitHub](https://github.com/harshv5094) :: [Twitter](https://twitter.com/harshv5094) :: [Bluesky](https://bsky.app/profile/harshv5094.bsky.social) :: [Instagram](https://instagram.com/harshv5094) :: [LinkedIn](https://linkedin.com/in/harshv5094)
 
-[RSA Public Key](https://raw.githubusercontent.com/harshv5094/harshv5094/refs/heads/main/my-rsa-public-key.asc)
+[RSA Public Key](https://raw.githubusercontent.com/harshv5094/harshv5094/refs/heads/main/my-rsa-public-key-sign-only.pgp)
 (git; sign-only)\
 `525F AC3D 751C F169 E31C 0E43 A897 C10C 48C4 E722`
 
