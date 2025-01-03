@@ -12,9 +12,9 @@ I love neovim and use arch btw.
 
 ## Stats
 
-- GitHub Followers: {{< github_stats type="followers" >}}
-- GitHub Repos: {{< github_stats type="repos" >}}
-- GitHub Sponsors: {{< github_stats type="sponsors" >}}
+- GitHub Followers: {{<github_stats type="followers">}}
+- GitHub Repos: {{<github_stats type="repos">}}
+- GitHub Sponsors: {{<github_stats type="sponsors">}}
 
 ## Links
 
@@ -22,7 +22,7 @@ I love neovim and use arch btw.
 
 [Resume](files/harsh-vyapari.pdf)
 
-[GitHub](https://github.com/harshv5094) :: [Twitter](https://twitter.com/harshv5094) :: [Bluesky](https://bsky.app/profile/harshv5094.bsky.social) :: [Instagram](https://instagram.com/harshv5094) :: [LinkedIn](https://linkedin.com/in/harshv5094)
+[GitHub](https://github.com/harshv5094) :: [GitLab](https://gitlab.com/harshv5094) :: [Twitter](https://twitter.com/harshv5094) :: [Bluesky](https://bsky.app/profile/harshv5094.bsky.social) :: [Instagram](https://instagram.com/harshv5094) :: [LinkedIn](https://linkedin.com/in/harshv5094)
 
 [RSA Public Key](https://raw.githubusercontent.com/harshv5094/harshv5094/refs/heads/main/git-sign-rsa-public.asc)
 (git; sign-only)\
