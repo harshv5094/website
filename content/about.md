@@ -7,7 +7,7 @@ hideComments = true
 ## Introduction
 
 I'm a developer.\
-I work in JavaScript, HTML, CSS, C, Bash Script.\
+I work in JavaScript, HTML, CSS, C, Python, Bash Script.\
 I love neovim and use arch btw.
 
 ## Stats
