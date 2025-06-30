@@ -10,11 +10,12 @@ function NotFound() {
   })
   return (
     <Main>
-      <section className='flex w-full flex-col items-center justify-center gap-5 py-16'>
+      <section className='flex w-full flex-col items-center justify-center gap-5 py-12'>
         <div className='grow'>
           <img
+            loading='lazy'
             src={NotFoundImage}
-            className='h-md sm:h-lg w-md sm:w-lg'
+            className='h-md md:h-lg w-md md:w-lg'
             alt='Page Not Found Image'
           />
         </div>
