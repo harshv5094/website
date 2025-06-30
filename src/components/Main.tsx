@@ -3,11 +3,11 @@ import type { ReactNode } from 'react'
 function Main({ children }: { children: ReactNode }) {
   return (
     <div>
-      <header className='bg-gray-800 px-5 py-4 text-white'>
+      <header className='fixed z-auto w-full bg-white/60 px-4 py-4 backdrop-blur sm:px-10 md:px-14'>
         <nav>Header</nav>
       </header>
 
-      <main className='h-dvh'>{children}</main>
+      <main className='px-4 pt-16 sm:px-10 md:px-14'>{children}</main>
 
       <footer className='flex h-20 w-full justify-center text-gray-800'>
         <section className='pt-4'>

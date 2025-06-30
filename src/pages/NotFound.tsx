@@ -1,5 +1,8 @@
 import { useEffect } from 'react'
 import Main from '../components/Main'
+import NotFoundImage from '../assets/not-found.svg'
+import Button from '../components/Button'
+import { Link } from 'react-router'
 
 function NotFound() {
   useEffect(() => {
@@ -7,7 +10,23 @@ function NotFound() {
   })
   return (
     <Main>
-      <div>Not Found</div>
+      <section className='flex w-full flex-col items-center justify-center gap-5 py-16'>
+        <div className='grow'>
+          <img
+            src={NotFoundImage}
+            className='h-md sm:h-lg w-md sm:w-lg'
+            alt='Page Not Found Image'
+          />
+        </div>
+        <div className='text-gray-700'>
+          <p>The page you&apos;re looking for does not exist</p>
+        </div>
+        <div>
+          <Link to='/'>
+            <Button type={'secondary'} wiggle={true} text={'Return To home'} />
+          </Link>
+        </div>
+      </section>
     </Main>
   )
 }
