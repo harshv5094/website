@@ -1,8 +1,10 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/react'
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-router'
 import ThemeToggleButton from './ThemeToggle'
+import Wave from 'react-wavify'
+import { FaPause, FaPlay } from 'react-icons/fa'
 
 type URLType = {
   link: string
@@ -10,6 +12,8 @@ type URLType = {
 }
 
 function Main({ children }: { children: ReactNode }) {
+  const [isPaused, setIsPaused] = useState(false)
+
   const URL = ({ link, name }: URLType) => {
     return (
       <div
@@ -34,25 +38,25 @@ function Main({ children }: { children: ReactNode }) {
   return (
     <div>
       <header className='bg-opacity-60 fixed z-auto w-full px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32'>
-        <nav className='flex items-center justify-between font-mono'>
+        <nav className='flex items-center justify-between'>
           <section
-            className={`hover:animate-wiggle text-xl transition duration-75 hover:scale-110`}
+            className={`hover:animate-wiggle scale-100 font-mono text-xl transition duration-75 hover:scale-110`}
           >
             <Link to='/'>Harsh Vyapari</Link>
           </section>
           <section className='flex'>
             <div className='hidden md:flex md:items-center md:justify-between md:gap-4'>
+              <URL link={'/about'} name={'About'} />
               <URL link={'/projects'} name={'Projects'} />
-              <URL link={'/contact'} name={'Contacts'} />
               <URL link={'/legal'} name={'Legal'} />
             </div>
 
             <section className='flex'>
-              <div className='md:pl-5'>
+              <div className='md:ml-5'>
                 <ThemeToggleButton />
               </div>
               {/* Dropdown Menu */}
-              <div className='flex pl-2 md:hidden'>
+              <div className='pl-2 md:hidden'>
                 <Menu>
                   <MenuButton className='inline-flex items-center gap-2 rounded bg-gray-800 px-3 py-2 text-sm/6 font-semibold text-white focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-700 data-open:bg-gray-700'>
                     <GiHamburgerMenu className='size-5' />
@@ -68,10 +72,10 @@ function Main({ children }: { children: ReactNode }) {
                       <DropDownUrl link='/' name='Home' />
                     </MenuItem>
                     <MenuItem>
-                      <DropDownUrl link='/projects' name='Projects' />
+                      <DropDownUrl link='/about' name='About' />
                     </MenuItem>
                     <MenuItem>
-                      <DropDownUrl link='/contact' name='Contact' />
+                      <DropDownUrl link='/projects' name='Projects' />
                     </MenuItem>
                     <MenuItem>
                       <DropDownUrl link='/legal' name='Legal' />
@@ -84,12 +88,44 @@ function Main({ children }: { children: ReactNode }) {
         </nav>
       </header>
 
-      <main className='px-4 pt-16 sm:px-8 md:px-20 lg:px-32'>{children}</main>
+      <main className='min-h-[calc(100vh-9rem)] px-4 pt-16 sm:px-8 md:px-20 lg:px-32'>
+        {children}
+      </main>
 
-      <footer className='flex h-20 w-full justify-center text-gray-800 dark:text-gray-400'>
+      <Wave
+        fill='url(#gradient)'
+        paused={isPaused}
+        options={{
+          height: 30,
+          amplitude: 40,
+          speed: 0.15,
+          points: 3
+        }}
+        className='fixed bottom-0 z-[-1] flex w-full'
+      >
+        <defs>
+          <linearGradient id='gradient' gradientTransform='rotate(90)'>
+            <stop offset='10%' stopColor='#22d3ee' /> {/* Tailwind: cyan-400 */}
+            <stop offset='90%' stopColor='#0ea5e9' /> {/* Tailwind: sky-500 */}
+          </linearGradient>
+        </defs>
+      </Wave>
+
+      <button
+        onClick={() => setIsPaused(!isPaused)}
+        className='absolute right-4 bottom-20 rounded-full bg-cyan-400 p-3 text-white shadow-md transition hover:bg-sky-500 sm:right-8 md:right-20 lg:right-32 dark:bg-sky-500 dark:hover:bg-cyan-400'
+        aria-label={isPaused ? 'Play wave' : 'Pause wave'}
+      >
+        {isPaused ? (
+          <FaPlay className='h-4 w-4' />
+        ) : (
+          <FaPause className='h-4 w-4' />
+        )}
+      </button>
+
+      <footer className='fixed bottom-1 flex h-20 w-full justify-center text-white'>
         <section className='pt-4'>
           &copy; {new Date().getFullYear()} Harsh Vyapari. All Rights Reserved
-          <div className='gap-2'></div>
         </section>
       </footer>
     </div>

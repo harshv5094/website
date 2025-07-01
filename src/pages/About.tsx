@@ -1,16 +1,15 @@
 import { useEffect } from 'react'
 import Main from '../components/Main'
 
-function Contact() {
+function About() {
   useEffect(() => {
-    document.title = 'Harsh Vyapari - Contact'
+    document.title = 'Harsh Vyapari - About'
   }, [])
-
   return (
     <Main>
-      <div>Contact Us</div>
+      <div>About</div>
     </Main>
   )
 }
 
-export default Contact
+export default About
