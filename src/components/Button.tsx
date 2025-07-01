@@ -8,12 +8,15 @@ type Props = {
 }
 
 function Button({ ...props }: Props) {
+  const wiggleClass =
+    props.wiggle === true ? 'hover:animate-wiggle' : 'hover:animate-none'
+  const commonClass = 'rounded px-3 py-1.5 font-medium duration-150'
   switch (props.type) {
     case 'primary':
       return (
         <button
           onClick={props.onClick}
-          className={`${props.wiggle === true ? 'hover:animate-wiggle' : 'hover:animate-none'} rounded border-2 border-blue-600 bg-blue-600 px-10 py-2 font-medium text-white duration-150 hover:border-blue-500 hover:bg-white hover:text-blue-500`}
+          className={`${wiggleClass} ${commonClass} bg-blue-600 text-white hover:bg-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600`}
         >
           {props.text}
         </button>
@@ -23,7 +26,7 @@ function Button({ ...props }: Props) {
       return (
         <button
           onClick={props.onClick}
-          className={`${props.wiggle === true ? 'hover:animate-wiggle' : 'hover:animate-none'} rounded border-2 border-blue-500 px-10 py-2 font-medium text-blue-500 duration-150 hover:border-blue-600 hover:bg-blue-600 hover:text-white`}
+          className={`${wiggleClass} ${commonClass} border-blue-500 text-blue-500 hover:border-blue-600 hover:bg-blue-600 hover:text-white`}
         >
           {props.text}
         </button>
@@ -33,7 +36,7 @@ function Button({ ...props }: Props) {
       return (
         <button
           onClick={props.onClick}
-          className={`${props.wiggle === true ? 'hover:animate-wiggle' : 'hover:animate-none'} rounded border-2 border-blue-600 bg-blue-600 px-10 py-2 font-medium text-white duration-150 hover:border-blue-500 hover:bg-white hover:text-blue-500`}
+          className={`${wiggleClass} ${commonClass} bg-blue-600 text-white hover:bg-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600`}
         >
           {props.text}
         </button>
