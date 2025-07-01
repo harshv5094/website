@@ -26,9 +26,14 @@ function Main({ children }: { children: ReactNode }) {
     )
   }
 
-  const DropDownUrl = ({ link, name }: URLType) => {
+  const DropDownUrl = ({
+    link,
+    name,
+    onClick
+  }: URLType & { onClick?: () => void }) => {
     return (
       <Link
+        onClick={onClick}
         className={`group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-white/10`}
         to={link}
       >
@@ -38,7 +43,7 @@ function Main({ children }: { children: ReactNode }) {
   }
 
   return (
-    <div>
+    <>
       <header className='bg-opacity-60 fixed z-auto w-full px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32'>
         <nav className='flex items-center justify-between'>
           <section
@@ -71,16 +76,36 @@ function Main({ children }: { children: ReactNode }) {
                     anchor='bottom end'
                   >
                     <MenuItem>
-                      <DropDownUrl link='/' name='Home' />
+                      {({ close }) => (
+                        <DropDownUrl link='/' name='Home' onClick={close} />
+                      )}
                     </MenuItem>
                     <MenuItem>
-                      <DropDownUrl link='/about' name='About' />
+                      {({ close }) => (
+                        <DropDownUrl
+                          link='/about'
+                          name='About'
+                          onClick={close}
+                        />
+                      )}
                     </MenuItem>
                     <MenuItem>
-                      <DropDownUrl link='/projects' name='Projects' />
+                      {({ close }) => (
+                        <DropDownUrl
+                          link='/projects'
+                          name='Projects'
+                          onClick={close}
+                        />
+                      )}
                     </MenuItem>
                     <MenuItem>
-                      <DropDownUrl link='/legal' name='Legal' />
+                      {({ close }) => (
+                        <DropDownUrl
+                          link='/legal'
+                          name='Legal'
+                          onClick={close}
+                        />
+                      )}
                     </MenuItem>
                   </MenuItems>
                 </Menu>
@@ -130,7 +155,7 @@ function Main({ children }: { children: ReactNode }) {
           &copy; {new Date().getFullYear()} Harsh Vyapari. All Rights Reserved
         </section>
       </footer>
-    </div>
+    </>
   )
 }
 
