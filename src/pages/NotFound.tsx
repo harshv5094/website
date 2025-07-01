@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import Main from '../components/Main'
 import NotFoundImage from '../assets/not-found.svg'
 import NotFoundDarkImage from '../assets/not-found-dark.svg'
 import Button from '../components/Button'
@@ -12,7 +11,7 @@ function NotFound() {
     document.title = 'Harsh Vyapari - 404'
   })
   return (
-    <Main>
+    <>
       <section className='flex w-full flex-col items-center justify-center gap-5 py-12'>
         <div className='grow'>
           <img
@@ -31,7 +30,7 @@ function NotFound() {
           </Link>
         </div>
       </section>
-    </Main>
+    </>
   )
 }
 

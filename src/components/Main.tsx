@@ -1,7 +1,7 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/react'
 import { useState, type ReactNode } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router'
 import ThemeToggleButton from './ThemeToggle'
 import Wave from 'react-wavify'
 import { FaPause, FaPlay } from 'react-icons/fa'
@@ -15,9 +15,11 @@ function Main({ children }: { children: ReactNode }) {
   const [isPaused, setIsPaused] = useState(false)
 
   const URL = ({ link, name }: URLType) => {
+    const location = useLocation()
+    const isActiveLink = location.pathname === link
     return (
       <div
-        className={`${window.location.pathname === link ? 'animate-wiggle underline decoration-blue-600 decoration-2 dark:hover:decoration-blue-500' : 'no-underline decoration-0'} duration-75 hover:scale-110 hover:underline hover:decoration-blue-600 hover:decoration-2 dark:hover:decoration-blue-500`}
+        className={`${isActiveLink ? 'animate-wiggle underline decoration-blue-600 decoration-2 dark:hover:decoration-blue-500' : 'no-underline decoration-0'} duration-75 hover:scale-110 hover:underline hover:decoration-blue-600 hover:decoration-2 dark:hover:decoration-blue-500`}
       >
         <Link to={link}>{name}</Link>
       </div>
