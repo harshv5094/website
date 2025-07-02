@@ -44,9 +44,9 @@ function Main({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <header className='fixed w-full bg-slate-50/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32 dark:bg-slate-800/60'>
+      <header className='fixed z-10 w-full bg-slate-100/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32 dark:bg-slate-800/60'>
         <nav className='flex items-center justify-between text-slate-800 dark:text-slate-100'>
-          <section className='hover:animate-wiggle scale-100 font-mono text-xl transition duration-75 hover:scale-110'>
+          <section className='hover:animate-wiggle font-mono text-xl transition duration-75 hover:scale-110'>
             <Link to='/'>Harsh Vyapari</Link>
           </section>
           <section className='flex'>
@@ -66,7 +66,7 @@ function Main({ children }: { children: ReactNode }) {
                     <GiHamburgerMenu className='size-5' />
                   </MenuButton>
                   <MenuItems
-                    className='w-52 origin-top-right rounded-xl bg-white p-1 text-sm/6 text-slate-800 shadow-md transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0 dark:bg-slate-800 dark:text-slate-100'
+                    className='w-52 origin-top-right rounded-xl bg-white p-1 text-sm/6 text-slate-800 shadow-md transition duration-100 ease-out [--anchor-gap:--spacing(3)] focus:outline-none data-closed:scale-95 data-closed:opacity-0 dark:bg-slate-800 dark:text-slate-100'
                     transition
                     anchor='bottom end'
                   >
