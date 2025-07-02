@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link, useLocation } from 'react-router'
 import ThemeToggleButton from './ThemeToggle'
 import Wave from 'react-wavify'
+import { useTheme } from '../context/ThemeContext'
 
 type URLType = {
   link: string
@@ -11,6 +12,8 @@ type URLType = {
 }
 
 function Main({ children }: { children: ReactNode }) {
+  const { isDark } = useTheme()
+
   const URL = ({ link, name }: URLType) => {
     const location = useLocation()
     const isActiveLink = location.pathname === link
@@ -41,7 +44,7 @@ function Main({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <header className='absolute top-0 w-full bg-slate-50/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32 dark:bg-slate-800/60'>
+      <header className='fixed w-full bg-slate-50/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32 dark:bg-slate-800/60'>
         <nav className='flex items-center justify-between text-slate-800 dark:text-slate-100'>
           <section className='hover:animate-wiggle scale-100 font-mono text-xl transition duration-75 hover:scale-110'>
             <Link to='/'>Harsh Vyapari</Link>
@@ -107,29 +110,29 @@ function Main({ children }: { children: ReactNode }) {
         </nav>
       </header>
 
-      <main className='mt-13.5 h-[35rem] overflow-y-auto bg-white px-4 text-slate-800 sm:h-[32rem] sm:px-8 md:px-20 lg:px-32 dark:bg-slate-900 dark:text-slate-100'>
+      <main className='bg-white px-4 pt-13.5 text-slate-800 sm:h-[32rem] sm:px-8 md:px-20 lg:px-32 dark:bg-slate-900 dark:text-slate-100'>
         {children}
       </main>
 
       <Wave
         fill='url(#gradient)'
         options={{
-          height: 30,
-          amplitude: 40,
+          height: 20,
+          amplitude: 30,
           speed: 0.15,
           points: 3
         }}
-        className='fixed bottom-0 -z-10'
+        className='fixed bottom-0 z-10'
       >
         <defs>
           <linearGradient id='gradient' gradientTransform='rotate(90)'>
-            <stop offset='10%' stopColor='#22d3ee' /> {/* Tailwind: cyan-400 */}
-            <stop offset='90%' stopColor='#0ea5e9' /> {/* Tailwind: sky-500 */}
+            <stop offset='10%' stopColor={isDark ? '#22d3ee' : '#93c5fd'} />
+            <stop offset='90%' stopColor={isDark ? '#0ea5e9' : '#99f6e4'} />
           </linearGradient>
         </defs>
       </Wave>
 
-      <footer className='fixed bottom-1 flex h-20 w-full justify-center text-white dark:text-slate-900'>
+      <footer className='fixed bottom-1 z-20 flex h-20 w-full justify-center text-slate-800 dark:text-white'>
         <section className='pt-4'>
           &copy; {new Date().getFullYear()} Harsh Vyapari. All Rights Reserved
         </section>
