@@ -44,7 +44,7 @@ function Main({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <header className='fixed z-auto w-full bg-slate-50/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32 dark:bg-slate-800/60'>
+      <header className='absolute top-0 z-auto w-full bg-slate-50/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32 dark:bg-slate-800/60'>
         <nav className='flex items-center justify-between text-slate-800 dark:text-slate-100'>
           <section className='hover:animate-wiggle scale-100 font-mono text-xl transition duration-75 hover:scale-110'>
             <Link to='/'>Harsh Vyapari</Link>
@@ -110,7 +110,7 @@ function Main({ children }: { children: ReactNode }) {
         </nav>
       </header>
 
-      <main className='scrollbar-hide h-[38rem] overflow-y-auto bg-white px-4 pt-16 text-slate-800 sm:h-[35rem] sm:px-8 md:px-20 lg:px-32 dark:bg-slate-900 dark:text-slate-100'>
+      <main className='mt-15 h-[38rem] overflow-y-auto bg-white px-4 text-slate-800 sm:h-[35rem] sm:px-8 md:px-20 lg:px-32 dark:bg-slate-900 dark:text-slate-100'>
         {children}
       </main>
 
