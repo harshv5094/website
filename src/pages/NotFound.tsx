@@ -4,6 +4,7 @@ import NotFoundDarkImage from '../assets/not-found-dark.svg'
 import Button from '../components/Button'
 import { Link } from 'react-router'
 import { useTheme } from '../context/ThemeContext'
+import { HiHome } from 'react-icons/hi2'
 
 function NotFound() {
   const { isDark } = useTheme()
@@ -26,7 +27,12 @@ function NotFound() {
         </div>
         <div>
           <Link to='/'>
-            <Button type={'primary'} wiggle={true} text={'Return To home'} />
+            <Button
+              type={'primary'}
+              wiggle={true}
+              leftIcon={<HiHome />}
+              text={'Return To home'}
+            />
           </Link>
         </div>
       </section>

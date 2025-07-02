@@ -24,9 +24,9 @@
 }
 
 body {
-  @apply bg-white text-gray-900 transition-colors duration-300;
+  @apply bg-white text-slate-800 transition-colors duration-300;
 }
 
 .dark body {
-  @apply bg-gray-900 text-white;
+  @apply bg-slate-900 text-slate-100;
 }

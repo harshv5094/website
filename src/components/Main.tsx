@@ -19,7 +19,7 @@ function Main({ children }: { children: ReactNode }) {
     const isActiveLink = location.pathname === link
     return (
       <div
-        className={`${isActiveLink ? 'animate-wiggle underline decoration-blue-600 decoration-2 dark:hover:decoration-blue-500' : 'no-underline decoration-0'} duration-75 hover:scale-110 hover:underline hover:decoration-blue-600 hover:decoration-2 dark:hover:decoration-blue-500`}
+        className={`${isActiveLink ? 'animate-wiggle underline decoration-teal-500 decoration-2 dark:hover:decoration-teal-400' : 'no-underline decoration-0'} duration-75 hover:scale-110 hover:underline hover:decoration-teal-500 hover:decoration-2 dark:hover:decoration-teal-400`}
       >
         <Link to={link}>{name}</Link>
       </div>
@@ -34,7 +34,7 @@ function Main({ children }: { children: ReactNode }) {
     return (
       <Link
         onClick={onClick}
-        className={`group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-white/10`}
+        className={`group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-slate-200 dark:hover:bg-slate-700`}
         to={link}
       >
         {name}
@@ -44,11 +44,9 @@ function Main({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <header className='bg-opacity-60 fixed z-auto w-full px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32'>
-        <nav className='flex items-center justify-between'>
-          <section
-            className={`hover:animate-wiggle scale-100 font-mono text-xl transition duration-75 hover:scale-110`}
-          >
+      <header className='fixed z-auto w-full bg-white/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32 dark:bg-slate-900/60'>
+        <nav className='flex items-center justify-between text-slate-800 dark:text-slate-100'>
+          <section className='hover:animate-wiggle scale-100 font-mono text-xl transition duration-75 hover:scale-110'>
             <Link to='/'>Harsh Vyapari</Link>
           </section>
           <section className='flex'>
@@ -62,16 +60,13 @@ function Main({ children }: { children: ReactNode }) {
               <div className='md:ml-5'>
                 <ThemeToggleButton />
               </div>
-              {/* Dropdown Menu */}
               <div className='pl-2 md:hidden'>
                 <Menu>
-                  <MenuButton className='inline-flex items-center gap-2 rounded bg-gray-800 px-3 py-2 text-sm/6 font-semibold text-white focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-700 data-open:bg-gray-700'>
+                  <MenuButton className='inline-flex items-center gap-2 rounded bg-slate-200 px-3 py-2.5 text-sm/6 font-semibold text-slate-800 hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700'>
                     <GiHamburgerMenu className='size-5' />
                   </MenuButton>
                   <MenuItems
-                    className={
-                      'w-52 origin-top-right rounded-xl bg-gray-700 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0'
-                    }
+                    className='w-52 origin-top-right rounded-xl bg-white p-1 text-sm/6 text-slate-800 shadow-md transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0 dark:bg-slate-800 dark:text-slate-100'
                     transition
                     anchor='bottom end'
                   >
@@ -115,7 +110,7 @@ function Main({ children }: { children: ReactNode }) {
         </nav>
       </header>
 
-      <main className='min-h-[calc(100vh-9rem)] px-4 pt-16 sm:px-8 md:px-20 lg:px-32'>
+      <main className='h-[38rem] overflow-auto bg-white px-4 pt-16 text-slate-800 sm:h-[35rem] sm:px-8 md:px-20 lg:px-32 dark:bg-slate-900 dark:text-slate-100'>
         {children}
       </main>
 
@@ -128,7 +123,7 @@ function Main({ children }: { children: ReactNode }) {
           speed: 0.15,
           points: 3
         }}
-        className='fixed bottom-0 z-[-1] flex w-full'
+        className='fixed bottom-0 -z-20'
       >
         <defs>
           <linearGradient id='gradient' gradientTransform='rotate(90)'>
@@ -140,7 +135,7 @@ function Main({ children }: { children: ReactNode }) {
 
       <button
         onClick={() => setIsPaused(!isPaused)}
-        className='absolute right-4 bottom-20 rounded-full bg-cyan-400 p-3 text-white shadow-md transition hover:bg-sky-500 sm:right-8 md:right-20 lg:right-32 dark:bg-sky-500 dark:hover:bg-cyan-400'
+        className='fixed right-4 bottom-20 rounded-full bg-teal-500 p-3 text-white shadow-md transition hover:bg-teal-600 sm:right-8 md:right-20 lg:right-32 dark:bg-teal-400 dark:hover:bg-teal-300'
         aria-label={isPaused ? 'Play wave' : 'Pause wave'}
       >
         {isPaused ? (
@@ -150,7 +145,7 @@ function Main({ children }: { children: ReactNode }) {
         )}
       </button>
 
-      <footer className='fixed bottom-1 flex h-20 w-full justify-center text-white'>
+      <footer className='fixed bottom-1 flex h-20 w-full justify-center text-slate-600 dark:text-slate-300'>
         <section className='pt-4'>
           &copy; {new Date().getFullYear()} Harsh Vyapari. All Rights Reserved
         </section>

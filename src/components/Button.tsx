@@ -5,43 +5,45 @@ type Props = {
   type: 'primary' | 'secondary'
   wiggle?: boolean
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
 }
 
-function Button({ ...props }: Props) {
-  const wiggleClass =
-    props.wiggle === true ? 'hover:animate-wiggle' : 'hover:animate-none'
-  const commonClass = 'rounded px-3 py-1.5 font-medium duration-150'
-  switch (props.type) {
-    case 'primary':
-      return (
-        <button
-          onClick={props.onClick}
-          className={`${wiggleClass} ${commonClass} bg-blue-600 text-white hover:bg-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600`}
-        >
-          {props.text}
-        </button>
-      )
+function Button({
+  text,
+  type,
+  wiggle = false,
+  onClick,
+  leftIcon,
+  rightIcon
+}: Props) {
+  const wiggleClass = wiggle ? 'hover:animate-wiggle' : 'hover:animate-none'
+  const baseClass =
+    'rounded px-4 py-2 font-medium transition duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 inline-flex items-center gap-2'
 
-    case 'secondary':
-      return (
-        <button
-          onClick={props.onClick}
-          className={`${wiggleClass} ${commonClass} border-blue-500 text-blue-500 hover:border-blue-600 hover:bg-blue-600 hover:text-white`}
-        >
-          {props.text}
-        </button>
-      )
-
-    default:
-      return (
-        <button
-          onClick={props.onClick}
-          className={`${wiggleClass} ${commonClass} bg-blue-600 text-white hover:bg-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600`}
-        >
-          {props.text}
-        </button>
-      )
+  const variants: Record<typeof type, string> = {
+    primary: `
+      bg-teal-500 text-white hover:bg-teal-600
+      dark:bg-teal-400 dark:hover:bg-teal-300
+      focus:ring-teal-300 dark:focus:ring-teal-500
+    `,
+    secondary: `
+      border border-slate-300 text-slate-800 hover:bg-slate-100
+      dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700
+      focus:ring-slate-400 dark:focus:ring-slate-500
+    `
   }
+
+  return (
+    <button
+      onClick={onClick}
+      className={`${wiggleClass} ${baseClass} ${variants[type]}`}
+    >
+      {leftIcon && <span className='size-4'>{leftIcon}</span>}
+      <span>{text}</span>
+      {rightIcon && <span className='size-4'>{rightIcon}</span>}
+    </button>
+  )
 }
 
 export default Button

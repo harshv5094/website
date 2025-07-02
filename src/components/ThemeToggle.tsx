@@ -1,14 +1,32 @@
 import { LuSun, LuMoon } from 'react-icons/lu'
 import { useTheme } from '../context/ThemeContext'
+import { motion, AnimatePresence } from 'framer-motion'
 
 function ThemeToggleButton() {
   const { isDark, toggleTheme } = useTheme()
+
   return (
     <button
       onClick={toggleTheme}
-      className='rounded bg-gray-200 px-3 py-2 text-black duration-75 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600'
+      aria-label='Toggle theme'
+      className='relative h-10 w-10 overflow-hidden rounded bg-slate-200 text-slate-800 transition hover:bg-slate-300 focus:ring-2 focus:ring-teal-400 focus:outline-none dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:focus:ring-teal-500'
     >
-      {isDark ? <LuSun className='size-5' /> : <LuMoon className='size-5' />}
+      <AnimatePresence mode='wait' initial={false}>
+        <motion.span
+          key={isDark ? 'sun' : 'moon'}
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 20, opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className='absolute inset-0 flex items-center justify-center'
+        >
+          {isDark ? (
+            <LuSun className='size-5' />
+          ) : (
+            <LuMoon className='size-5' />
+          )}
+        </motion.span>
+      </AnimatePresence>
     </button>
   )
 }
