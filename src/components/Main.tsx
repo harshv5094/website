@@ -1,10 +1,9 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/react'
-import { useState, type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link, useLocation } from 'react-router'
 import ThemeToggleButton from './ThemeToggle'
 import Wave from 'react-wavify'
-import { FaPause, FaPlay } from 'react-icons/fa'
 
 type URLType = {
   link: string
@@ -12,8 +11,6 @@ type URLType = {
 }
 
 function Main({ children }: { children: ReactNode }) {
-  const [isPaused, setIsPaused] = useState(false)
-
   const URL = ({ link, name }: URLType) => {
     const location = useLocation()
     const isActiveLink = location.pathname === link
@@ -110,20 +107,19 @@ function Main({ children }: { children: ReactNode }) {
         </nav>
       </header>
 
-      <main className='mt-15 h-[35rem] overflow-y-auto bg-white px-4 text-slate-800 sm:h-[31rem] sm:px-8 md:px-20 lg:px-32 dark:bg-slate-900 dark:text-slate-100'>
+      <main className='mt-13.5 h-[35rem] overflow-y-auto bg-white px-4 text-slate-800 sm:h-[32rem] sm:px-8 md:px-20 lg:px-32 dark:bg-slate-900 dark:text-slate-100'>
         {children}
       </main>
 
       <Wave
         fill='url(#gradient)'
-        paused={isPaused}
         options={{
           height: 30,
           amplitude: 40,
           speed: 0.15,
           points: 3
         }}
-        className='fixed bottom-0 -z-20'
+        className='fixed bottom-0 -z-10'
       >
         <defs>
           <linearGradient id='gradient' gradientTransform='rotate(90)'>
@@ -132,18 +128,6 @@ function Main({ children }: { children: ReactNode }) {
           </linearGradient>
         </defs>
       </Wave>
-
-      <button
-        onClick={() => setIsPaused(!isPaused)}
-        className='fixed right-4 bottom-20 rounded-full bg-teal-500 p-3 text-white shadow-md transition hover:bg-teal-600 sm:right-8 md:right-20 lg:right-32 dark:bg-teal-400 dark:hover:bg-teal-300'
-        aria-label={isPaused ? 'Play wave' : 'Pause wave'}
-      >
-        {isPaused ? (
-          <FaPlay className='h-4 w-4' />
-        ) : (
-          <FaPause className='h-4 w-4' />
-        )}
-      </button>
 
       <footer className='fixed bottom-1 flex h-20 w-full justify-center text-white dark:text-slate-900'>
         <section className='pt-4'>
