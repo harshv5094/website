@@ -145,7 +145,7 @@ function Main({ children }: { children: ReactNode }) {
         )}
       </button>
 
-      <footer className='fixed bottom-1 flex h-20 w-full justify-center text-slate-600 dark:text-slate-300'>
+      <footer className='fixed bottom-1 flex h-20 w-full justify-center text-white dark:text-slate-900'>
         <section className='pt-4'>
           &copy; {new Date().getFullYear()} Harsh Vyapari. All Rights Reserved
         </section>
