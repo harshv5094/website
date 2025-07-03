@@ -31,13 +31,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const root = document.documentElement
-    if (isDark) {
-      root.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      root.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
+    root.setAttribute('data-theme', isDark ? 'dark' : 'light')
+    localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }, [isDark])
 
   const toggleTheme = () => setIsDark(prev => !prev)

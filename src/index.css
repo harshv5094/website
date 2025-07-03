@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import 'tailwindcss';
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
   --animate-wiggle: wiggle 0.2s ease-in-out;
@@ -20,12 +20,4 @@
       transform: rotate(3deg);
     }
   }
-}
-
-body {
-  @apply bg-white text-slate-800 transition-colors duration-300;
-}
-
-.dark body {
-  @apply bg-slate-900 text-slate-100;
 }
