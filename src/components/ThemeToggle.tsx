@@ -1,6 +1,7 @@
+'use client'
 import { LuSun, LuMoon } from 'react-icons/lu'
-import { useTheme } from '../context/ThemeContext'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTheme } from '@/context/ThemeContext'
 
 function ThemeToggleButton() {
   const { isDark, toggleTheme } = useTheme()
