@@ -1,14 +1,14 @@
 import { useEffect } from 'react'
 
-function Projects() {
+function Works() {
   useEffect(() => {
     document.title = 'Harsh Vyapari - Projects'
   }, [])
   return (
     <>
-      <div>Projects</div>
+      <div>Works</div>
     </>
   )
 }
 
-export default Projects
+export default Works

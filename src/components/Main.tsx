@@ -13,9 +13,9 @@ type URLType = {
 
 function Main({ children }: { children: ReactNode }) {
   const { isDark } = useTheme()
+  const location = useLocation()
 
   const URL = ({ link, name }: URLType) => {
-    const location = useLocation()
     const isActiveLink = location.pathname === link
     return (
       <div
@@ -52,7 +52,7 @@ function Main({ children }: { children: ReactNode }) {
           <section className='flex'>
             <div className='hidden md:flex md:items-center md:justify-between md:gap-4'>
               <URL link={'/about'} name={'About'} />
-              <URL link={'/projects'} name={'Projects'} />
+              <URL link={'/works'} name={'Works'} />
               <URL link={'/legal'} name={'Legal'} />
             </div>
 
@@ -87,8 +87,8 @@ function Main({ children }: { children: ReactNode }) {
                     <MenuItem>
                       {({ close }) => (
                         <DropDownUrl
-                          link='/projects'
-                          name='Projects'
+                          link='/works'
+                          name='Works'
                           onClick={close}
                         />
                       )}
