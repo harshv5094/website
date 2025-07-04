@@ -28,14 +28,16 @@ function Main({ children }: { children: ReactNode }) {
   const URL = ({ link, name }: URLType) => {
     const isActiveLink = location.pathname === link
     return (
-      <div
-        onClick={() => {
-          play()
-        }}
-        className={`${isActiveLink ? 'animate-wiggle underline decoration-teal-500 decoration-2 dark:hover:decoration-teal-400' : 'no-underline decoration-0'} duration-75 hover:scale-110 hover:underline hover:decoration-teal-500 hover:decoration-2 dark:hover:decoration-teal-400`}
-      >
-        <Link to={link}>{name}</Link>
-      </div>
+      <Link to={link}>
+        <div
+          onClick={() => {
+            play()
+          }}
+          className={`${isActiveLink ? 'animate-wiggle underline decoration-teal-500 decoration-2 dark:hover:decoration-teal-400' : 'no-underline decoration-0'} duration-75 hover:scale-110 hover:underline hover:decoration-teal-500 hover:decoration-2 dark:hover:decoration-teal-400`}
+        >
+          {name}
+        </div>
+      </Link>
     )
   }
 
@@ -50,12 +52,12 @@ function Main({ children }: { children: ReactNode }) {
     }
 
     return (
-      <Link
-        className={`group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-slate-200 dark:hover:bg-slate-700`}
-        onClick={handleClick}
-        to={link}
-      >
-        {name}
+      <Link onClick={handleClick} to={link}>
+        <div
+          className={`group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-slate-200 dark:hover:bg-slate-700`}
+        >
+          {name}
+        </div>
       </Link>
     )
   }
@@ -64,14 +66,16 @@ function Main({ children }: { children: ReactNode }) {
     <>
       <header className='fixed z-10 w-full bg-slate-100/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32 dark:bg-slate-800/60'>
         <nav className='flex items-center justify-between text-slate-800 dark:text-slate-100'>
-          <section
-            onClick={() => {
-              play()
-            }}
-            className='font-mono text-lg transition duration-75 hover:scale-110'
-          >
-            <Link to='/'>Harsh Vyapari</Link>
-          </section>
+          <Link to='/'>
+            <section
+              onClick={() => {
+                play()
+              }}
+              className='font-mono text-lg transition duration-75 hover:scale-110'
+            >
+              Harsh Vyapari
+            </section>
+          </Link>
           <section className='flex'>
             <div className='hidden md:flex md:items-center md:justify-between md:gap-4'>
               <URL link={'/about'} name={'About'} />
