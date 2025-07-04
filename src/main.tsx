@@ -8,21 +8,24 @@ import { ThemeProvider } from './context/ThemeContext.tsx'
 import About from './pages/About.tsx'
 import Main from './components/Main.tsx'
 import Works from './pages/Work.tsx'
+import { SoundProvider } from './context/SoundContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <ThemeProvider>
-    <StrictMode>
-      <BrowserRouter>
-        <Main>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/works' element={<Works />} />
-            <Route path='/legal' element={<Legal />} />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-        </Main>
-      </BrowserRouter>
-    </StrictMode>
-  </ThemeProvider>
+  <StrictMode>
+    <ThemeProvider>
+      <SoundProvider>
+        <BrowserRouter>
+          <Main>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/works' element={<Works />} />
+              <Route path='/legal' element={<Legal />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </Main>
+        </BrowserRouter>
+      </SoundProvider>
+    </ThemeProvider>
+  </StrictMode>
 )

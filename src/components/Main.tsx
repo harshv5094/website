@@ -5,6 +5,10 @@ import { Link, useLocation } from 'react-router'
 import ThemeToggleButton from './ThemeToggle'
 import Wave from 'react-wavify'
 import { useTheme } from '../context/ThemeContext'
+import SoundToggleButton from './SoundToggle'
+import MouseClick from '../sounds/click_general.mp3'
+import useSound from 'use-sound'
+import { useSoundToggle } from '../context/SoundContext'
 
 type URLType = {
   link: string
@@ -14,11 +18,20 @@ type URLType = {
 function Main({ children }: { children: ReactNode }) {
   const { isDark } = useTheme()
   const location = useLocation()
+  const { isSound } = useSoundToggle()
+
+  const [play] = useSound(MouseClick, {
+    soundEnabled: isSound,
+    volume: 0.5
+  })
 
   const URL = ({ link, name }: URLType) => {
     const isActiveLink = location.pathname === link
     return (
       <div
+        onClick={() => {
+          play()
+        }}
         className={`${isActiveLink ? 'animate-wiggle underline decoration-teal-500 decoration-2 dark:hover:decoration-teal-400' : 'no-underline decoration-0'} duration-75 hover:scale-110 hover:underline hover:decoration-teal-500 hover:decoration-2 dark:hover:decoration-teal-400`}
       >
         <Link to={link}>{name}</Link>
@@ -32,13 +45,16 @@ function Main({ children }: { children: ReactNode }) {
     onClick
   }: URLType & { onClick?: () => void }) => {
     return (
-      <Link
-        onClick={onClick}
+      <div
+        onClick={() => {
+          play()
+        }}
         className={`group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-slate-200 dark:hover:bg-slate-700`}
-        to={link}
       >
-        {name}
-      </Link>
+        <Link onClick={onClick} to={link}>
+          {name}
+        </Link>
+      </div>
     )
   }
 
@@ -46,7 +62,12 @@ function Main({ children }: { children: ReactNode }) {
     <>
       <header className='fixed z-10 w-full bg-slate-100/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32 dark:bg-slate-800/60'>
         <nav className='flex items-center justify-between text-slate-800 dark:text-slate-100'>
-          <section className='hover:animate-wiggle font-mono text-xl transition duration-75 hover:scale-110'>
+          <section
+            onClick={() => {
+              play()
+            }}
+            className='font-mono text-lg transition duration-75 hover:scale-110'
+          >
             <Link to='/'>Harsh Vyapari</Link>
           </section>
           <section className='flex'>
@@ -58,7 +79,10 @@ function Main({ children }: { children: ReactNode }) {
 
             <section className='flex'>
               <div className='md:ml-5'>
-                <ThemeToggleButton />
+                <ThemeToggleButton data-skip-sound />
+              </div>
+              <div className='pl-2'>
+                <SoundToggleButton data-skip-sound />
               </div>
               <div className='pl-2 md:hidden'>
                 <Menu>

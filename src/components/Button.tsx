@@ -1,4 +1,7 @@
 import type React from 'react'
+import { useSoundToggle } from '../context/SoundContext'
+import useSound from 'use-sound'
+import MouseClick from '../sounds/click_general.mp3'
 
 type Props = {
   text: string
@@ -17,6 +20,12 @@ function Button({
   leftIcon,
   rightIcon
 }: Props) {
+  const { isSound } = useSoundToggle()
+  const [play] = useSound(MouseClick, {
+    soundEnabled: isSound,
+    volume: 0.5
+  })
+
   const wiggleClass = wiggle ? 'hover:animate-wiggle' : 'hover:animate-none'
   const baseClass =
     'rounded px-4 py-2 font-medium transition duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 inline-flex items-center gap-2'
@@ -36,7 +45,10 @@ function Button({
 
   return (
     <button
-      onClick={onClick}
+      onClick={event => {
+        play()
+        if (onClick) onClick(event)
+      }}
       className={`${wiggleClass} ${baseClass} ${variants[type]}`}
     >
       {leftIcon && <span className='size-4'>{leftIcon}</span>}
