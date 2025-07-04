@@ -44,17 +44,19 @@ function Main({ children }: { children: ReactNode }) {
     name,
     onClick
   }: URLType & { onClick?: () => void }) => {
+    const handleClick = () => {
+      play()
+      onClick?.()
+    }
+
     return (
-      <div
-        onClick={() => {
-          play()
-        }}
+      <Link
         className={`group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-slate-200 dark:hover:bg-slate-700`}
+        onClick={handleClick}
+        to={link}
       >
-        <Link onClick={onClick} to={link}>
-          {name}
-        </Link>
-      </div>
+        {name}
+      </Link>
     )
   }
 
