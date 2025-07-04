@@ -10,7 +10,7 @@ const SoundContext = createContext<SoundContextType | undefined>(undefined)
 export const useSoundToggle = (): SoundContextType => {
   const context = useContext(SoundContext)
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider')
+    throw new Error('useSound must be used within a SoundProvider')
   }
   return context
 }
