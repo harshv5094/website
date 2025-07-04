@@ -1,4 +1,3 @@
-// src/context/ThemeContext.tsx
 import {
   createContext,
   useContext,
@@ -23,17 +22,26 @@ export const useTheme = (): ThemeContextType => {
 }
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    const stored = localStorage.getItem('theme')
-    if (stored) return stored === 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-  })
+  const [isDark, setIsDark] = useState(false) // SSR-safe default
+  const [hasMounted, setHasMounted] = useState(false)
 
   useEffect(() => {
+    const stored = localStorage.getItem('theme')
+    const systemPrefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches
+    const initialTheme = stored ? stored === 'dark' : systemPrefersDark
+
+    setIsDark(initialTheme)
+    setHasMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!hasMounted) return
     const root = document.documentElement
     root.setAttribute('data-theme', isDark ? 'dark' : 'light')
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
-  }, [isDark])
+  }, [isDark, hasMounted])
 
   const toggleTheme = () => setIsDark(prev => !prev)
 
