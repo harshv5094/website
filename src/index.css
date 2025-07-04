@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap');
 @import 'tailwindcss';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
   --animate-wiggle: wiggle 0.2s ease-in-out;
-  --default-font-family: 'Inter', sans-serif;
-  --default-mono-font-family: 'JetBrains Mono', monospace;
-  --font-sans: 'Inter', sans-serif;
-  --font-mono: 'Jetbrains Mono', monospace;
+  --font-sans:
+    'Inter', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --font-mono:
+    'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-heading: 'Space Grotesk', Georgia, serif;
 
   @keyframes wiggle {
     0%,
@@ -19,5 +22,16 @@
     50% {
       transform: rotate(3deg);
     }
+  }
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+
+  code,
+  pre {
+    font-family: var(--font-mono);
   }
 }

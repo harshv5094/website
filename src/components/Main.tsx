@@ -52,28 +52,28 @@ function Main({ children }: { children: ReactNode }) {
     }
 
     return (
-      <Link onClick={handleClick} to={link}>
-        <div
-          className={`group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-slate-200 dark:hover:bg-slate-700`}
-        >
-          {name}
-        </div>
+      <Link
+        className={`group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 hover:bg-slate-200 dark:hover:bg-slate-700`}
+        onClick={handleClick}
+        to={link}
+      >
+        {name}
       </Link>
     )
   }
 
   return (
     <>
-      <header className='fixed z-10 w-full bg-slate-100/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-20 lg:px-32 dark:bg-slate-800/60'>
+      <header className='fixed z-10 w-full bg-slate-100/60 px-4 pt-2 pb-1.5 backdrop-blur sm:px-8 md:px-32 lg:px-40 dark:bg-slate-800/60'>
         <nav className='flex items-center justify-between text-slate-800 dark:text-slate-100'>
           <Link to='/'>
             <section
               onClick={() => {
                 play()
               }}
-              className='font-mono text-lg transition duration-75 hover:scale-110'
+              className='font-heading text-xl transition duration-75 hover:scale-110'
             >
-              Harsh Vyapari
+              <h1>Harsh Vyapari</h1>
             </section>
           </Link>
           <section className='flex'>
@@ -140,7 +140,7 @@ function Main({ children }: { children: ReactNode }) {
         </nav>
       </header>
 
-      <main className='bg-white px-4 pt-13.5 text-slate-800 sm:h-[32rem] sm:px-8 md:px-20 lg:px-32 dark:bg-slate-900 dark:text-slate-100'>
+      <main className='bg-white px-4 pt-13.5 text-slate-800 sm:h-[32rem] sm:px-8 md:px-32 lg:px-40 dark:bg-slate-900 dark:text-slate-100'>
         {children}
       </main>
 

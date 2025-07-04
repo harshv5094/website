@@ -21,7 +21,7 @@ function Home() {
 
         {/* Text */}
         <div className='mt-2 flex flex-col items-center gap-1 font-sans'>
-          <span className='text-3xl font-bold'>Harsh Vyapari</span>
+          <span className='font-heading text-3xl font-bold'>Harsh Vyapari</span>
           <span className='text-md'>
             A Software Developer who loves to code.
           </span>

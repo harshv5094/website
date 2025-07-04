@@ -25,7 +25,7 @@ function NotFound() {
         <div>
           <Link to='/'>
             <Button
-              type={'primary'}
+              type={'secondary'}
               wiggle={true}
               leftIcon={<HiHome />}
               text={'Return To home'}
