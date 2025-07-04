@@ -1,24 +1,21 @@
 import { useEffect } from 'react'
 import NotFoundImage from '../assets/not-found.svg'
-import NotFoundDarkImage from '../assets/not-found-dark.svg'
 import Button from '../components/Button'
 import { Link } from 'react-router'
-import { useTheme } from '../context/ThemeContext'
 import { HiHome } from 'react-icons/hi2'
 
 function NotFound() {
-  const { isDark } = useTheme()
   useEffect(() => {
     document.title = 'Harsh Vyapari - 404'
   })
   return (
     <>
-      <section className='flex w-full flex-col items-center justify-center gap-5 py-12'>
+      <section className='flex w-full flex-col items-center justify-center gap-4 py-12'>
         <div className='grow'>
           <img
             loading='lazy'
-            src={isDark ? NotFoundDarkImage : NotFoundImage}
-            className='h-md md:h-lg w-md md:w-lg'
+            src={NotFoundImage}
+            className='size-64'
             alt='Page Not Found Image'
           />
         </div>

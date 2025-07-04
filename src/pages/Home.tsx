@@ -7,7 +7,7 @@ function Home() {
   }, [])
   return (
     <>
-      <section className='flex flex-col items-center gap-6'>
+      <section className='flex flex-col items-center gap-4'>
         {/* Image */}
         <div className='pt-14 md:pt-14'>
           <img
@@ -20,9 +20,9 @@ function Home() {
         </div>
 
         {/* Text */}
-        <div className='flex flex-col items-center gap-0 font-sans md:gap-1'>
-          <span className='text-2xl font-bold md:text-3xl'>Harsh Vyapari</span>
-          <span className='text-md md:text-lg'>
+        <div className='flex flex-col items-center gap-0.5 font-sans'>
+          <span className='text-3xl font-bold'>Harsh Vyapari</span>
+          <span className='text-md'>
             A Software Developer who loves to code.
           </span>
         </div>
