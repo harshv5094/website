@@ -23,11 +23,11 @@ function Layout({ children }: { children: ReactNode }) {
         fill='url(#gradient)'
         options={{
           height: 20,
-          amplitude: 40,
+          amplitude: 30,
           speed: 0.15,
           points: 3
         }}
-        className='fixed bottom-0 -z-10'
+        className='fixed bottom-0 h-[30vh] -z-10'
       >
         <defs>
           <linearGradient id='gradient' gradientTransform='rotate(90)'>

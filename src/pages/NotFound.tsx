@@ -19,8 +19,8 @@ function NotFound() {
             alt='Page Not Found Image'
           />
         </div>
-        <div className='text-gray-700 dark:text-gray-400'>
-          <p>The page you&apos;re looking for does not exist</p>
+        <div className='text-slate-500 dark:text-slate-400'>
+          <p>The page you&apos;re looking for does not exist </p>
         </div>
         <div>
           <Link to='/'>

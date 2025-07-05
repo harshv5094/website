@@ -16,7 +16,7 @@ function Home() {
           <img
             loading='lazy'
             src={ProfilePic}
-            className='size-60 rounded-full ring-4 ring-teal-500 drop-shadow-[0_0_12px_rgba(20,184,166,0.7)] dark:ring-teal-400 dark:drop-shadow-[0_0_12px_rgba(45,212,191,0.7)]'
+            className='size-52 rounded-full ring-4 ring-teal-500 drop-shadow-[0_0_12px_rgba(20,184,166,0.7)] dark:ring-teal-400 dark:drop-shadow-[0_0_12px_rgba(45,212,191,0.7)]'
             aria-label='Profile Picture'
             alt='Profile Pic'
           />
@@ -29,7 +29,7 @@ function Home() {
         </section>
 
         {/* Social Links */}
-        <div className='flex flex-row gap-2'>
+        <div className='flex mt-2 flex-row gap-2'>
           <SocialMediaButton
             label={'Github Profile Link'}
             icon={<FaGithub size={22} />}
