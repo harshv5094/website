@@ -17,9 +17,9 @@ function About() {
       className={`mx-auto my-4 grid place-content-center gap-2 px-4 sm:px-6 md:px-16 lg:px-20 xl:px-52`}
     >
       {/* About Me Section */}
-      <div className='mb-2 max-w-prose'>
+      <div className='mb-2 max-w-prose text-justify'>
         <Title>About Me</Title>
-        <section className='text-balance'>
+        <section>
           <p>
             Hi!, I'm <b>Harsh Vyapari</b>- a Software Developer currently based
             in <b>Maharashtra, India.</b> I'm passionate about learning new
@@ -32,7 +32,7 @@ function About() {
       </div>
 
       {/* Bio */}
-      <div className='mb-2'>
+      <div className='mb-2 text-justify'>
         <Title>Bio</Title>
         <section className='grid gap-y-1'>
           <div className='grid grid-cols-[auto_1fr] gap-x-4'>
@@ -41,7 +41,7 @@ function About() {
           </div>
           <div className='grid grid-cols-[auto_1fr] gap-x-4'>
             <span className='font-bold'>2024</span>
-            <span>
+            <span >
               Completed UG Program in Computer Engineering from{' '}
               <a
                 href='https://www.stvincentngp.edu.in/'
@@ -55,7 +55,7 @@ function About() {
           </div>
           <div className='grid grid-cols-[auto_1fr] gap-x-4'>
             <span className='font-bold'>2025 to now</span>
-            <span>
+            <span >
               Working as a Junior Software Developer in Veyron Technologies
             </span>
           </div>
@@ -65,7 +65,7 @@ function About() {
       {/* Hobbies and Interests Section */}
       <div className='mb-2'>
         <Title>I ♥</Title>
-        <section className='text-left'>
+        <section className='text-justify'>
           Books, Riding Bikes, Tinkering with Linux (Arch btw), Computers, Music
         </section>
       </div>
