@@ -14,7 +14,7 @@ function Layout({ children }: { children: ReactNode }) {
           {children}
         </main>
 
-        <footer className='flex justify-center text-slate-600 dark:text-white/80'>
+        <footer className='flex justify-center text-slate-700 dark:text-white/80'>
           &copy; {new Date().getFullYear()} Harsh Vyapari. All Rights Reserved
         </footer>
       </div>
