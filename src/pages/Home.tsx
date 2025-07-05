@@ -1,5 +1,8 @@
 import { useEffect } from 'react'
 import ProfilePic from '../assets/profile-pic.webp'
+import SocialMediaButton from '../components/SocialMediaButton'
+import { FaBluesky, FaGithub, FaLinkedin } from 'react-icons/fa6'
+import { SiGmail, SiProtonmail } from 'react-icons/si'
 
 function Home() {
   useEffect(() => {
@@ -7,7 +10,7 @@ function Home() {
   }, [])
   return (
     <>
-      <article className='flex flex-col content-center items-center gap-4'>
+      <article className='flex flex-col content-center items-center gap-2'>
         {/* Image */}
         <section className='pt-14 md:pt-14'>
           <img
@@ -28,7 +31,33 @@ function Home() {
         </section>
 
         {/* Social Links */}
-        <div></div>
+        <div className='flex flex-row gap-2'>
+          <SocialMediaButton
+            label={'Github Profile Link'}
+            icon={<FaGithub size={22} />}
+            to={'https://github.com/harshv5094'}
+          />
+          <SocialMediaButton
+            label={'Bluesky Profile Link'}
+            icon={<FaBluesky size={18} />}
+            to={'https://bsky.app/profile/harshv5094.bsky.social'}
+          />
+          <SocialMediaButton
+            label={'Bluesky Profile Link'}
+            icon={<FaLinkedin size={20} />}
+            to={'https://linkedin.com/in/harshv5094'}
+          />
+          <SocialMediaButton
+            label={'Protom Mail Link'}
+            icon={<SiProtonmail size={18} />}
+            to={'mailto:harshvy5094.proton.me'}
+          />
+          <SocialMediaButton
+            label={'Protom Mail Link'}
+            icon={<SiGmail size={18} />}
+            to={'mailto:harshv5094@gmail.com'}
+          />
+        </div>
       </article>
     </>
   )

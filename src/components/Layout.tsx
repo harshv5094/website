@@ -7,11 +7,17 @@ function Layout({ children }: { children: ReactNode }) {
   const { isDark } = useTheme()
   return (
     <>
-      <Header />
+      <div className='flex min-h-screen flex-col'>
+        <Header />
 
-      <main className='container mx-auto px-4 pt-14 sm:px-6 md:px-10 lg:px-12'>
-        {children}
-      </main>
+        <main className='container mx-auto grow-[0.8] px-4 pt-14 sm:px-6 md:px-10 lg:px-32'>
+          {children}
+        </main>
+
+        <footer className='flex justify-center text-slate-600 dark:text-white/80'>
+          &copy; {new Date().getFullYear()} Harsh Vyapari. All Rights Reserved
+        </footer>
+      </div>
 
       <Wave
         fill='url(#gradient)'
@@ -30,12 +36,6 @@ function Layout({ children }: { children: ReactNode }) {
           </linearGradient>
         </defs>
       </Wave>
-
-      <footer className='flex justify-center text-slate-600 dark:text-white/80'>
-        <section className='pt-4'>
-          &copy; {new Date().getFullYear()} Harsh Vyapari. All Rights Reserved
-        </section>
-      </footer>
     </>
   )
 }

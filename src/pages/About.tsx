@@ -66,8 +66,7 @@ function About() {
       <div className='mb-2'>
         <Title>I ♥</Title>
         <section className='text-left'>
-          <span className='pl-3'>Books, </span>
-          Riding Bikes, Tinkering with Linux (Arch btw), Computers, Music
+          Books, Riding Bikes, Tinkering with Linux (Arch btw), Computers, Music
         </section>
       </div>
     </article>
