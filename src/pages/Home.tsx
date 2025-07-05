@@ -7,9 +7,9 @@ function Home() {
   }, [])
   return (
     <>
-      <section className='flex flex-col items-center gap-4'>
+      <article className='flex flex-col items-center gap-4'>
         {/* Image */}
-        <div className='pt-14 md:pt-14'>
+        <section className='pt-14 md:pt-14'>
           <img
             loading='lazy'
             src={ProfilePic}
@@ -17,19 +17,19 @@ function Home() {
             aria-label='Profile Picture'
             alt='Profile Pic'
           />
-        </div>
+        </section>
 
         {/* Text */}
-        <div className='mt-2 flex flex-col items-center gap-1 font-sans'>
+        <section className='mt-2 flex flex-col items-center gap-1 font-sans'>
           <span className='font-heading text-3xl font-bold'>Harsh Vyapari</span>
-          <span className='text-md'>
+          <span className='text-lg'>
             A Software Developer who loves to code.
           </span>
-        </div>
+        </section>
 
         {/* Social Links */}
         <div></div>
-      </section>
+      </article>
     </>
   )
 }

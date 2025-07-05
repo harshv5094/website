@@ -21,7 +21,7 @@ function ThemeToggleButton() {
         play()
       }}
       aria-label='Toggle theme'
-      className='relative h-10 w-10 overflow-hidden rounded bg-slate-200 text-slate-800 transition hover:bg-slate-300 focus:ring-2 focus:ring-teal-400 focus:outline-none dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:focus:ring-teal-500'
+      className='relative h-10 w-10 overflow-hidden rounded bg-slate-200 text-slate-800 transition not-focus:outline-none hover:bg-slate-300 hover:ring-2 hover:ring-teal-400 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:focus:ring-teal-500'
     >
       <AnimatePresence mode='wait' initial={false}>
         <motion.span

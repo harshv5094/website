@@ -6,16 +6,16 @@ import NotFound from './pages/NotFound.tsx'
 import Legal from './pages/Legal.tsx'
 import { ThemeProvider } from './context/ThemeContext.tsx'
 import About from './pages/About.tsx'
-import Main from './components/Main.tsx'
 import Works from './pages/Work.tsx'
 import { SoundProvider } from './context/SoundContext.tsx'
+import Layout from './components/Layout.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider>
       <SoundProvider>
         <BrowserRouter>
-          <Main>
+          <Layout>
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/about' element={<About />} />
@@ -23,7 +23,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path='/legal' element={<Legal />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
-          </Main>
+          </Layout>
         </BrowserRouter>
       </SoundProvider>
     </ThemeProvider>
