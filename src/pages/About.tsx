@@ -14,7 +14,7 @@ function About() {
   }, [])
   return (
     <article
-      className={`mx-auto my-4 grid place-content-center gap-2 px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32`}
+      className={`mx-auto my-4 grid place-content-center gap-2 px-4 sm:px-6 md:px-16 lg:px-20 xl:px-52`}
     >
       {/* About Me Section */}
       <div className='mb-2 max-w-prose'>
