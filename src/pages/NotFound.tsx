@@ -10,7 +10,7 @@ function NotFound() {
   })
   return (
     <>
-      <section className='flex w-full flex-col items-center justify-center gap-4 py-12'>
+      <section className='flex flex-col items-center justify-center gap-4 py-4'>
         <div className='grow'>
           <img
             loading='lazy'
@@ -25,7 +25,7 @@ function NotFound() {
         <div>
           <Link to='/'>
             <Button
-              type={'secondary'}
+              type={'primary'}
               wiggle={true}
               leftIcon={<HiHome />}
               text={'Return To home'}

@@ -60,7 +60,7 @@ function Header() {
 
   return (
     <header className='fixed z-10 w-full bg-slate-100/60 pt-2 pb-1.5 backdrop-blur dark:bg-slate-800/60'>
-      <div className='container mx-auto px-4 sm:px-6 lg:px-20'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-32'>
         <nav className='flex items-center justify-between text-slate-800 dark:text-slate-100'>
           <Link to='/'>
             <section

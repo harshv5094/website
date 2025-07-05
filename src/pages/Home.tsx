@@ -7,7 +7,7 @@ function Home() {
   }, [])
   return (
     <>
-      <article className='flex flex-col items-center gap-4'>
+      <article className='flex flex-col content-center items-center gap-4'>
         {/* Image */}
         <section className='pt-14 md:pt-14'>
           <img

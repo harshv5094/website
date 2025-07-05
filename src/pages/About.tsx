@@ -1,21 +1,5 @@
 import { useEffect, type ReactNode } from 'react'
 
-const Article = ({
-  children,
-  className = ''
-}: {
-  children: ReactNode
-  className?: string
-}) => {
-  return (
-    <article
-      className={`container mx-auto my-4 flex flex-col gap-2 px-4 sm:px-6 md:px-10 lg:px-24 xl:px-32 2xl:px-48 ${className}`}
-    >
-      {children}
-    </article>
-  )
-}
-
 const Title = ({ children }: { children: ReactNode }) => {
   return (
     <section className='font-heading text-2xl font-bold underline decoration-teal-500 decoration-2 dark:decoration-teal-400'>
@@ -29,9 +13,11 @@ function About() {
     document.title = 'Harsh Vyapari - About'
   }, [])
   return (
-    <Article>
+    <article
+      className={`mx-auto my-4 grid place-content-center gap-2 px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32`}
+    >
       {/* About Me Section */}
-      <div className='mb-2'>
+      <div className='mb-2 max-w-prose'>
         <Title>About Me</Title>
         <section className='text-balance'>
           <p>
@@ -77,14 +63,14 @@ function About() {
       </div>
 
       {/* Hobbies and Interests Section */}
-      <div className='mb-2 pb-32 md:pb-0'>
+      <div className='mb-2'>
         <Title>I ♥</Title>
         <section className='text-left'>
           <span className='pl-3'>Books, </span>
           Riding Bikes, Tinkering with Linux (Arch btw), Computers, Music
         </section>
       </div>
-    </Article>
+    </article>
   )
 }
 
