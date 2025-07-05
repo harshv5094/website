@@ -12,7 +12,7 @@ function Home() {
     <>
       <article className='flex flex-col content-center items-center gap-2'>
         {/* Image */}
-        <section className='pt-14 md:pt-14'>
+        <section className='pt-12 md:pt-14'>
           <img
             loading='lazy'
             src={ProfilePic}
@@ -25,9 +25,7 @@ function Home() {
         {/* Text */}
         <section className='mt-2 flex flex-col items-center gap-1 font-sans'>
           <span className='font-heading text-3xl font-bold'>Harsh Vyapari</span>
-          <span className='text-lg'>
-            A Software Developer who loves to code.
-          </span>
+          <span className='text-lg'>Software Developer / Linux Enthusiast</span>
         </section>
 
         {/* Social Links */}
