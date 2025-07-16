@@ -1,0 +1,32 @@
+# Hugo build output
+/public/
+/resources/_gen/
+/hugo_stats.json
+/.hugo_build.lock
+
+# Ignore build artifacts and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# OS-specific
+ehthumbs.db
+Icon?
+desktop.ini
+
+# Node.js dependencies (if using npm/yarn for themes or tools)
+/node_modules/
+/package-lock.json
+/yarn.lock
+
+# VS Code
+.vscode/
+
+# Netlify or other CI/CD build outputs
+/netlify/
+
+# Backup files
+*~
